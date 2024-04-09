@@ -42,19 +42,23 @@ transition: all 0.8s ease;
 .Container{
    display:flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: center;
+ flex-wrap: wrap;
   width: 1,536px;
 height: 822px;
 top: 129px;
 left: 192px;
 gap: 60px;
 opacity: 0px;
-
 }
 
 .header{
 font-size: 15px;
 font-weight: bolder;
+}
+
+.text{
+  font-size: 15px;
 }
 
 .button-pointer{
@@ -70,11 +74,10 @@ font-weight: bolder;
 
 @media (max-width: 500px) {
 
+ 
 
-  .Container{
-    display:flex;
-    flex-direction: column;
-
+  .text{
+    font-size: 13px;
   }
 
 }
