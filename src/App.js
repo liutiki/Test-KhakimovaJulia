@@ -1,24 +1,45 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import { data } from './data';
+import gsap from 'gsap';
 
 function App() {
+
+  const [showText,setShowText]=useState(false);
+
+  useEffect(() => {
+    gsap.from('.TextPosition', {
+      duration: 1,
+    opacity:1,
+   
+   delay:0.6,
+    });
+      
+  }, []);
+
+
+const showTextClick = (item) => {
+    item.showMore=!item.showMore
+    setShowText(!showText)
+  };
+
+
+  
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="Container">
+     {data.map((item) => {
+      const { id,header, text, showMore } = item;
+      return (
+        <div className="TextPosition"key={id}>
+         <p className="header">{showMore ? header : header.substring(0, 15) }<button className="button-pointer"onClick={()=>showTextClick(item)}>{showMore ?<span className="small-text">...show less</span> : "..."}</button></p>
+         <p className="text">{text}</p>
+        </div>
+      )
+    })}
+  </div>
+    
   );
 }
 

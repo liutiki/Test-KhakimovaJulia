@@ -11,3 +11,70 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body{
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.TextPosition{
+background-color: transparent;
+border:1px solid black;
+width:339px;
+height: 234px;
+top: 297px;
+left: 20px;
+padding: 15px 25px 15px 25px;
+gap: 15px;
+border-radius: 25px;
+opacity: 0;
+font-size: 15px;
+transition: all 0.8s ease; 
+ }
+
+ .TextPosition:hover{
+  background-color: rgba(255, 255, 255, 1);
+  border:1px solid rgba(255, 47, 84, 1);
+  transform: translateY(10px);
+  box-shadow: 0 0 60px rgba(255, 47, 84, 1);
+
+ }
+
+.Container{
+   display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 1,536px;
+height: 822px;
+top: 129px;
+left: 192px;
+gap: 60px;
+opacity: 0px;
+
+}
+
+.header{
+font-size: 15px;
+font-weight: bolder;
+}
+
+.button-pointer{
+  border:none;
+  background-color: transparent;
+  font-size: 25px;
+}
+
+.small-text{
+  font-size: 14px;
+  color:rgba(255, 47, 84, 1);
+}
+
+@media (max-width: 500px) {
+
+
+  .Container{
+    display:flex;
+    flex-direction: column;
+
+  }
+
+}
